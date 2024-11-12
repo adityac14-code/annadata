@@ -1,0 +1,25 @@
+const int lm35pin=A0;
+
+void setup()
+{
+	pinmode(13, output);
+	serial.begin(9600);
+}
+
+void loop()
+{
+	digitalWrite(13, High);
+	int rawvalue=analogRead(lm35pin);
+	int temperatureC=(5.0 * rawvalue * 100.0) / 1024.0;
+	if(temperature >= 30)
+	{
+		serial.println("High Temperature");
+		digitalwrite(13, High);	
+	}
+	else
+	{
+		digitalwrite(13, Low);	
+	}
+	
+	delay(1000);
+}

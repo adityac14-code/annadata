@@ -1,0 +1,21 @@
+void setup()
+{
+	pinmode(13, output);
+	pinmode(12,intput);
+}
+
+void loop()
+{
+	int IRsensor=digitalRead(12);
+	
+	if(IRsensor == High)
+	{
+		digitaiWrite(13, High);
+	}
+	else
+	{
+		digitaiWrite(13, Low);
+	}
+	
+	delay(100);
+}
